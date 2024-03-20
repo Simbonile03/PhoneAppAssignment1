@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="PhoneAppAssignment1.ShoopingCartPage">
+
+   
+    <ContentPage.Content>
+        <StackLayout Padding="20" Spacing="10">
+            <Label Text="Available Phones" FontSize="Large" FontAttributes="Bold" HorizontalOptions="Center" Margin="0,20,0,10"/>
+
+            <ListView x:Name="PhonesListView">
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <ViewCell>
+                            <StackLayout Orientation="Horizontal" Padding="10" Spacing="10">
+                                <!-- Checkbox -->
+                                <CheckBox IsChecked="{Binding IsSelected}" VerticalOptions="Center" Margin="0,0,10,0"/>
+                                <!-- Labels -->
+                                <Label Text="{Binding Name}" FontAttributes="Bold"/>
+                                <Label Text="{Binding Model}" FontAttributes="Italic"/>
+                                <Label Text="{Binding Price, StringFormat='Price: ${0:F2}'}"/>
+                                
+                            </StackLayout>
+                        </ViewCell>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+                <!-- Tap gesture recognizer to handle item tap -->
+                <ListView.GestureRecognizers>
+                    
+                </ListView.GestureRecognizers>
+            </ListView>
+
+            <!-- Confirm button -->
+            <Button Text="Add To Cart"  HorizontalOptions="FillAndExpand"/>
+
+            <!-- Shopping cart button -->
+            <Button Text="Shopping Cart"  HorizontalOptions="FillAndExpand"/>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

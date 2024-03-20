@@ -1,0 +1,40 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:local="clr-namespace:PhoneAppAssignment1"
+             x:Class="PhoneAppAssignment1.MenuPage"
+             BackgroundColor="Black">
+
+    <ContentPage.Content>
+        
+        <StackLayout Margin="20">
+            
+            <!-- Input fields for customer information -->
+            <Entry x:Name="firstNameEntry" Placeholder="First Name" />
+            <Entry x:Name="lastNameEntry" Placeholder="Last Name" />
+            <Entry x:Name="emailEntry" Placeholder="Email" />
+            <Entry x:Name="bioEntry" Placeholder="Bio" />
+
+            <!-- Button to save customer information -->
+            <Button x:Name="SaveButton"
+                    Text="Save"
+                    
+                    HorizontalOptions="FillAndExpand"
+                    VerticalOptions="CenterAndExpand" />
+          
+
+            <!-- Label for displaying phone prices -->
+            <Label Text="Phone Prices" FontSize="Large" HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand" />
+
+            <!-- ListView for displaying phone items -->
+            <ListView x:Name="itemListView">
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <TextCell Text="{Binding Name}" Detail="{Binding Model}" />
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+        </StackLayout>
+    </ContentPage.Content>
+
+</ContentPage>

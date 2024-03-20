@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:local="clr-namespace:PhoneAppAssignment1"
+             x:Class="PhoneAppAssignment1.ShoppingCartPage">
+
+    <ContentPage.Content>
+        <StackLayout Margin="20">
+            <!-- Header -->
+            <Label Text="Shopping Cart" FontSize="Large" HorizontalOptions="Center" Margin="0,0,0,20" />
+            <Label Text="Selected Phone Details" FontSize="Large" HorizontalOptions="CenterAndExpand" Margin="0,0,0,20" />
+            <!-- List of selected items -->
+            <ListView x:Name="selectedItemsListView">
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <TextCell Text="{Binding Name}" Detail="{Binding Model}" />
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+
+            <Label Text="Model:" FontSize="Medium" />
+            <Label x:Name="phoneModelLabel" FontSize="Medium" Margin="0,0,0,20" />
+
+            <Label Text="Name:" FontSize="Medium" />
+            <Label x:Name="phoneNameLabel" FontSize="Medium" Margin="0,0,0,20" />
+
+            <!-- Total price -->
+            <Label Text="Price:" FontSize="Medium" />
+            <Label x:Name="phonePriceLabel" FontSize="Medium" Margin="0,0,0,20" />
+
+            <!-- Checkout button -->
+            <Button Text="Checkout" Clicked="OnCheckoutClicked" HorizontalOptions="FillAndExpand" />
+        </StackLayout>
+    </ContentPage.Content>
+
+</ContentPage>
